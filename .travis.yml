@@ -1,0 +1,17 @@
+os: osx
+language: generic
+osx_image: xcode13.3
+dist: trusty
+jobs:
+  include:
+   - stage: build
+     name: "Building"
+   - script: ./scripts/build.sh
+   - stage: test
+     name: "unit testing"
+   - script: ./scripts/test.sh
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
