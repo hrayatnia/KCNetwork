@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "KCNetwork",
+    platforms: [.macOS(.v10_15), .iOS(.v13), .tvOS(.v14)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
@@ -24,9 +25,6 @@ let package = Package(
             dependencies: []),
         .testTarget(
             name: "KCNetworkTests",
-            dependencies: ["KCNetwork", "KCTestUtil"],
-            resources: [
-                .copy("Resources"),
-            ]),
+            dependencies: ["KCNetwork", "KCTestUtil"]),
     ]
 )
