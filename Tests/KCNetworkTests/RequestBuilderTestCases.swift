@@ -18,7 +18,7 @@ final class RequestBuilderTestCase: XCUnitTestCase {
         ], wrappedValue: request)
         var tempRequest: Request
         
-        XCTAssert(tempRequest.url?.path.contains("search") ?? false)
+        XCTAssert(tempRequest.url?.absoluteString.contains("search") ?? false)
     }
     
     func testSetHeader() {
@@ -39,6 +39,19 @@ final class RequestBuilderTestCase: XCUnitTestCase {
         var tempRequest: Request
         
         XCTAssert(tempRequest.httpMethod == HTTPMethod.PATCH.rawValue)
+        
+    }
+    
+    func testSetQueryItem() {
+        @RequestBuilder(requestable: [
+            HTTPMethod.GET,
+            URIPath("/sample"),
+            QueryItem(name: "test", value: "testing")
+        ],
+                        wrappedValue: request)
+        var tempRequest: Request
+        print(tempRequest)
+        XCTAssert(tempRequest.url?.absoluteString.contains("test=testing") ?? false)
         
     }
 }
