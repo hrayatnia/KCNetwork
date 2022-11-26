@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "kctestutil",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hrayatnia/KCTestUtil",
+      "state" : {
+        "revision" : "1714bb6a3d01e9a8af2d3ad71d586e37234ed1be",
+        "version" : "1.0.2"
+      }
+    }
+  ],
+  "version" : 2
+}
