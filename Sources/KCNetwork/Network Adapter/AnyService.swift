@@ -11,4 +11,8 @@ extension AnyService {
             self?.result = result
         }
     }
+    
+    public func run() async {
+        self.result = await network.run(request: request)
+    }
 }
